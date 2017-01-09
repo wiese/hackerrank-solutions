@@ -1,0 +1,23 @@
+{
+    "name": "wiese/hackerrank-php-skeleton",
+    "description": "A skeleton to develop, test, and pritty-print code for submission on hackerrank",
+    "type": "project",
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "wiese\\HackerrankSkeleton\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "wiese\\HackerrankSkeleton\\Tests\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
+}

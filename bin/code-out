@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+$srcDir = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR;
+
+$output = '';
+$output .= file_get_contents($srcDir . 'Solution.php') . PHP_EOL;
+$output .= file_get_contents($srcDir . 'HackerrankApplication.php') . PHP_EOL;
+$output .= 'HackerrankApplication::main($inputs);' . PHP_EOL;
+
+$output = str_replace(['<?php'], '', $output);
+$output = preg_replace(['/^declare.+?;/m', '/^namespace.+?;/m', ], '', $output);
+$output = str_replace(["\n\n\n"], "\n\n", $output);
+
+echo $output;

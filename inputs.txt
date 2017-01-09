@@ -1,0 +1,28 @@
+hackerrank input formats encountered ...
+========================================
+
+<?php
+
+// two values (strings) from two lines of stdin
+$handle = fopen ("php://stdin","r");
+fscanf($handle,"%s",$a);
+fscanf($handle,"%s",$b);
+
+<?php
+
+// multiple values from two lines of stdin
+$handle = fopen ("php://stdin","r");
+fscanf($handle,"%d %d",$n, $d);
+$a_temp = fgets($handle);
+$a = explode(" ",$a_temp);
+array_walk($a,'intval');
+
+<?php
+
+// dynamic amount of input lines
+$handle = fopen ("php://stdin","r");
+fscanf($handle,"%d",$t);
+for($a0 = 0; $a0 < $t; $a0++){
+    fscanf($handle,"%s",$expression);
+    yourfunction($expression);
+}
